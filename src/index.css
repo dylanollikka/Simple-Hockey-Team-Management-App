@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #424242;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: #636060;
+  font-size: 30px;
+  color: orange;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'Roboto';
+}
+table {
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 100%;
+}
+
+th {
+  height: 70px;
+  border-style: ridge;
+  background-color: #363232;
+  color:white;
+  background-blend-mode: darken;
+}
+
+td {
+  height: 30px;
+  background-color: #252525;
+  margin-bottom: 2px;
+  font-weight: 400;
+  font-size: 18px;
+  border-width: medium;
+  padding: 10px;
+  color: orange;
+  letter-spacing: 1px;
+}
+
+
+.btn-danger {
+  font-weight: bold;
+  background-color: red;
+}
+
+.btn-danger:hover{
+    background-color: grey;
+    box-shadow: 0 0px 8px 0 grey;
+    transition: all 0.5s ease;
+}
+
+.btn-success {
+  font-weight: bold;
+  background-color: lightgreen;
+  text-align: center;
+  margin-left: 500px;
+  width: 140px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  height: 40px;
+}
+
+.btn-success:hover{
+    background-color: grey;
+    box-shadow: 0 0px 8px 0 grey;
+    transition: all 0.5s ease;
+}
+
+.btn-warning {
+  font-weight: bold;
+  background-color: yellow;
+}
+
+.btn-warning:hover{
+    background-color: grey;
+    box-shadow: 0 0px 8px 0 grey;
+    transition: all 0.5s ease;
+}
+
+.form-group {
+  text-align: center;
+  padding: 15px;
+  margin-left: 400px;
+  width: 300px;
+  font-weight: bold;
+  color: orange;
+  font-size: 18;
+  background-color: #363232;
+  border-radius: 25px;
+  border: 2px solid white;
+}
+
+.form-group:hover {
+  background-color: grey;
+  box-shadow: 0 0px 8px 0 grey;
+  transition: all 0.5s ease;
+}
+
+.form-check {
+  text-align: center;
+  margin-left: 450px;
+  color: orange;
+  background-color: #363232;
+  width: 200px;
+  padding: 5px;
+  border-radius: 25px;
+  border: 2px solid white;
+}
