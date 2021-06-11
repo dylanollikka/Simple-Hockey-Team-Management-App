@@ -6,7 +6,7 @@ class App extends Component {
     super(props);
     this.state = {f_name:'', l_name:'', male:'', female:'',
     date:'', city:'', team:'', rank:'', achvmts:'', file:'',
-    allPlayers:[]};
+    allPlayers:[], errors:{}};
     this.onDelete = this.onDelete.bind(this);
   }
 
@@ -16,6 +16,15 @@ class App extends Component {
 */
 onFormSubmit = (event) => {
   event.preventDefault();
+  if(!this.state.f_name || !this.state.l_name || !this.state.city || !this.state.date || !this.state.team
+  || !this.state.rank) {
+    alert('Length not long enough');
+    return;
+  }
+  if(!this.state.female && !this.state.male) {
+    alert('You must indicate a gender');
+    return;
+  }
   let new_player = [...this.state.allPlayers, {f_name:this.state.f_name, l_name:this.state.l_name,
   male:this.state.male, female:this.state.female, date:this.state.date, city:this.state.city,
 team:this.state.team, rank:this.state.rank, achvmts:this.state.achvmts, file:this.state.file}];
@@ -28,19 +37,20 @@ team:this.state.team, rank:this.state.rank, achvmts:this.state.achvmts, file:thi
  * Return Value: None. User input is saved into an array
 */
 onTextInputChange = (event) => {
+
   const fieldName = event.target.name;
   switch(fieldName) {
     case 'inputFName':
-      this.setState({f_name:event.target.value});
-      break;
+        this.setState({f_name:event.target.value});
+        break;
     case 'inputLName':
       this.setState({l_name:event.target.value});
       break;
     case 'genderRadio1':
-      this.setState({male:event.target.value});
+      this.setState({male:"M"});
       break;
     case 'genderRadio2':
-      this.setState({female:event.target.value});
+      this.setState({female:"F"});
       break;
     case 'inputDate':
       this.setState({date:event.target.value});
@@ -71,7 +81,8 @@ onTextInputChange = (event) => {
 */
 
 displayRows = (obj, ind) => {
-  return <tr>             
+  console.log(obj.male, obj.female);
+  return <tr>
     <td>{ind + 1}</td>
     <td>{obj.f_name}</td>
     <td>{obj.l_name}</td>
@@ -129,6 +140,7 @@ render() {
           <label>First Name</label>
           <input type="text" name="inputFName" placeholder="Enter First Name" className="form-control"
           value={this.state.f_name} onChange={this.onTextInputChange}></input>
+
         </div>
         <br></br>
         <div className="form-group">
